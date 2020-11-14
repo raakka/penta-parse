@@ -7,8 +7,23 @@ const print = std.debug.print;
 const test_string1 = "abc";
 const test_string2 = "tokenize this junk";
 const stupid_symbols = "/ * < >";
+const math_lol = "1 + 1"; 
 
-//const sym = enum {
+// okay this is playing with dumb stuff at this point
+/// but what does this do wtf is this a macro or nahh???
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Type and Op enums..
+
+//yay enums I love enums please more... -_-
+const opperator = enum {
+    plus, minus, div, mult, floor, mod
+};
+
+//more enums (smart string handling)
+const string_type = enum {
+    singleq, doubleq
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Testing stuff, lots of tests lol
@@ -30,11 +45,20 @@ test "bruh tokenizer" {
     }
 }
 
+/// This is the test we use to check if we can math or nah
+test "bruh math" { 
+    var math_in_parts = std.mem.tokenize(math_lol, " "); 
+    while (math_in_parts.next()) |item| {
+        const type = switch (item) {
+
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Main junk
 
 pub fn main() void {
     print_tokenized_stuff();
+    ident();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,3 +73,10 @@ pub fn print_tokenized_stuff() void {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Identifing ops n sym
+
+pub fn ident() void {
+    var string_in_parts2 = std.mem.tokenize(stupid_symbols, " ");
+    while (string_in_parts2.next()) |token| {
+        print("{}\n", .{token});
+    }
+}
