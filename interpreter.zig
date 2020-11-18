@@ -7,7 +7,7 @@ const print = std.debug.print;
 const test_string1 = "abc";
 const test_string2 = "tokenize this junk";
 const stupid_symbols = "/ * < >";
-const math_lol = "1 + 1"; 
+const math_lol = "1 + 1";
 
 // okay this is playing with dumb stuff at this point
 /// but what does this do wtf is this a macro or nahh???
@@ -46,11 +46,12 @@ test "bruh tokenizer" {
 }
 
 /// This is the test we use to check if we can math or nah
-test "bruh math" { 
-    var math_in_parts = std.mem.tokenize(math_lol, " "); 
+test "bruh math" {
+    var math_in_parts = std.mem.tokenize(math_lol, " ");
     while (math_in_parts.next()) |item| {
-        const type = switch (item) {
-
+        //const type = switch (item) {
+        //}
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
